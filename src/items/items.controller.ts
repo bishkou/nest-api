@@ -7,7 +7,6 @@ import { Youtube } from 'tube-api';
 @Controller('items')
 export class ItemsController {
   yt;
-  vid = [];
   constructor(private readonly itemsService: ItemsService) {
     this.yt = new Youtube('AIzaSyDzpOSifvlHU5G_pL7lVRWAm50Z8KkrNz4');
   }
