@@ -16,7 +16,6 @@ export class ItemsController {
     if (this.yt){
     const ch = await this.yt.channelDetails('UC8butISFwT-Wl7EV0hUK0BQ');
     const c = await this.yt.videoInfo('RBSGKlAvoiM')
-      console.log(c);
     return this.itemsService.findAll();
     }
   }
