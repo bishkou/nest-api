@@ -3,16 +3,18 @@ import { Item } from './interfaces/item.interface';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
+
+
 @Injectable()
 export class ItemsService {
   constructor(@InjectModel('Item') private readonly itemModel: Model<any>) {}
 
   async findAll(): Promise<Item[]> {
-    return await this.itemModel.find();
+    return this.itemModel.find();
   }
 
   async findOne(id: string): Promise<Item> {
-    return await this.itemModel.findOne({ _id: id });
+    return this.itemModel.findOne({ _id: id });
   }
 
   async create(item: Item): Promise<Item> {
@@ -21,10 +23,10 @@ export class ItemsService {
   }
 
   async delete(id: string): Promise<Item> {
-    return await this.itemModel.findByIdAndRemove(id);
+    return this.itemModel.findByIdAndRemove(id);
   }
 
   async update(id: string, item: Item): Promise<Item> {
-    return await this.itemModel.findByIdAndUpdate(id, item, { new: true });
+    return this.itemModel.findByIdAndUpdate(id, item, { new: true });
   }
 }
