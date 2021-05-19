@@ -16,7 +16,9 @@ export class ItemsController {
   async findAll(): Promise<Item[]> {
     if (this.yt){
     const ch = await this.yt.channelDetails('UC8butISFwT-Wl7EV0hUK0BQ');
-
+      // console.log(ch);
+    // const vid = await this.yt.videosList(ch.uploads_id, [])
+    //   console.log(vid);
     const c = await this.yt.videoInfo('RBSGKlAvoiM')
       console.log(c);
     return this.itemsService.findAll();
