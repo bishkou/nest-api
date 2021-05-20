@@ -8,7 +8,7 @@ import { Youtube } from 'tube-api';
 export class ItemsController {
   yt;
   constructor(private readonly itemsService: ItemsService) {
-    this.yt = new Youtube('AIzaSyDzpOSifvlHU5G_pL7lVRWAm50Z8KkrNz4');
+    this.yt = new Youtube('');
   }
 
   @Get()
