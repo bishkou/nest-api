@@ -18,6 +18,7 @@ export class ItemsController {
     const c = await this.yt.videoInfo('RBSGKlAvoiM')
     return this.itemsService.findAll();
     }
+
   }
 
   @Get(':id')
